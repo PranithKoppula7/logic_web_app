@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/PranithKoppula7/logic_web_app/issues"
   },
-  "homepage": "https://github.com/PranithKoppula7/logic_web_app#readme"
+  "homepage": "https://github.com/PranithKoppula7/logic_web_app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "nodemon": "^2.0.4"
+  }
 }
