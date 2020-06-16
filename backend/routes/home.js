@@ -1,6 +1,9 @@
 const router = require('express').Router();
+const verify = require('../verifyToken');
 
-
-router.get('/home', (req, res) => {
+router.get('/', verify, (req, res) => {
   res.send('At Home');
 })
+
+
+module.exports = router;
