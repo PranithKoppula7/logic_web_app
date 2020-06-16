@@ -5,9 +5,9 @@
       <ng-template matTabContent>
         <mat-card>
           <form class="login-form" fxLayoutAlign="stretch" fxLayout="column">
-            <mat-form-field class="username">
-              <mat-label>Username</mat-label>
-              <input matInput>
+            <mat-form-field class="email">
+              <mat-label>Email</mat-label>
+              <input matInput type="email">
             </mat-form-field>
             <mat-form-field class="password">
               <mat-label>Password</mat-label>
@@ -22,20 +22,31 @@
         <ng-template matTabContent>
             <mat-card>
               <form class="login-form" fxLayoutAlign="stretch" fxLayout="column">
-                <mat-form-field class="username" >
-                  <mat-label>Username</mat-label>
+                <mat-form-field class="first-name" >
+                  <mat-label>First Name</mat-label>
                   <input matInput>
                 </mat-form-field>
 
-                <mat-form-field class="password">
-                  <mat-label>Password</mat-label>
+                <mat-form-field class="last-name">
+                  <mat-label>Last Name</mat-label>
                   <input matInput>
                 </mat-form-field>
 
                 <mat-form-field class="email">
                     <mat-label>Email</mat-label>
-                    <input matInput>
-                  </mat-form-field>
+                    <input matInput type="email">
+                </mat-form-field>
+
+                <mat-form-field class="pid">
+                  <mat-label>PID</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field class="password">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password">
+                </mat-form-field>
+
                   <button mat-raised-button type="submit" color="primary">Sign Up!</button>
               </form>
             </mat-card>
