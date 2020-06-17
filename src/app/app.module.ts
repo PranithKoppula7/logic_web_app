@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ThirdPartyModule } from './shared/third-party.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ValidateService } from './shared/services/validate.service';
+import { AuthService } from './shared/services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ThirdPartyModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
