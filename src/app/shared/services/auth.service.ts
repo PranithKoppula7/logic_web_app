@@ -16,13 +16,23 @@ export class AuthService {
   registerUser(user: User) {
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
-    return this.http.post<User>(this.registerUrl, user, 
+    return this.http.post(this.registerUrl, user, 
       {
         headers: header
       });
   }
 
-  loginUser(user: User) {
-    return this.http.post<User>(this.loginUrl, user);
+  loginUser(user) {
+    let header = new HttpHeaders();
+    header.append('Content-Type', 'application/json');
+    return this.http.post(this.loginUrl, user, 
+      { 
+        headers: header,
+        responseType: 'text'
+      });
+  }
+
+  loggedIn(): boolean {
+    return !!localStorage.getItem('token');
   }
 }

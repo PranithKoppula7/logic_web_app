@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 import { User } from 'src/app/shared/models/user';
 import { ValidateService } from 'src/app/shared/services/validate.service';
@@ -11,7 +12,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user: User =  {
+  registrationUser: User =  {
     firstName: "",
     lastName: "",
     email: "",
@@ -20,10 +21,16 @@ export class LoginComponent implements OnInit {
     password: ""
   }
 
+  login_user = {
+    email : "",
+    password: ""
+  }
+
   constructor(
     private snackBar: MatSnackBar, 
     private validateService: ValidateService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -31,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   createUser() {
     // validate required fields
-    if(!this.validateService.validateRegister(this.user)) {
+    if(!this.validateService.validateRegister(this.registrationUser)) {
       this.snackBar.open('Please fill in all fields', 'Close', {
         duration: 2000
       });
@@ -39,18 +46,25 @@ export class LoginComponent implements OnInit {
     } 
 
     // validate email
-    if(!this.validateService.validateEmail(this.user.email)) {
+    if(!this.validateService.validateEmail(this.registrationUser.email)) {
       this.snackBar.open('Use Valid Email', 'Close', {
         duration: 2000
       });
       return false;
     }
+
+    this.authService.registerUser(this.registrationUser).subscribe(
+      res => console.log(res)
+    );
   }
 
   loginUser() {
-    this.authService.loginUser(this.user).subscribe(
-      res => console.log(res),
-      err => console.log(err)
+    // console.log(this.login_user);
+    this.authService.loginUser(this.login_user).subscribe(
+      res => {
+        localStorage.setItem('token', res);
+        this.router.navigate(['/home']);
+      }
     )
   }
 

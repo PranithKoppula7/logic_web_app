@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const authRoute = require('./routes/auth');
-const homeRoute = require('./routes/home');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -16,10 +15,15 @@ mongoose.connect(process.env.DB_CONNECT,
 
 app.use(express.json());
 
+// cors
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 // listening
 app.listen(3000);
 
 // routes
 app.use('/api/user', authRoute);
-app.use('/api/home', homeRoute);

@@ -8,12 +8,15 @@ import { LoginComponent } from './components/login/login.component';
 import { ThirdPartyModule } from './shared/third-party.module';
 import { ValidateService } from './shared/services/validate.service';
 import { AuthService } from './shared/services/auth.service';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { AuthService } from './shared/services/auth.service';
     ThirdPartyModule,
     BrowserAnimationsModule,
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
