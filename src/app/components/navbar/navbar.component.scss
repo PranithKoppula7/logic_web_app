@@ -1,0 +1,20 @@
+@import '../../../styles.scss';
+
+mat-toolbar {
+    background-color: $background-color;
+    color: white;
+    padding: 3%;
+}
+
+span a, span a:hover, span a:visited, span a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+li {
+    list-style: none;
+}

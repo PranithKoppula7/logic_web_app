@@ -10,6 +10,8 @@ import { ValidateService } from './shared/services/validate.service';
 import { AuthService } from './shared/services/auth.service';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DisplaycardComponent } from './components/displaycard/displaycard.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { AuthGuard } from './auth.guard';
     AppComponent,
     LoginComponent,
     HomeComponent,
+    NavbarComponent,
+    DisplaycardComponent,
   ],
   imports: [
     BrowserModule,
