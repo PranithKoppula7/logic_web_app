@@ -55,7 +55,6 @@ export class LoginComponent implements OnInit {
 
     this.authService.registerUser(this.registrationUser).subscribe(
       res => {
-        
         this.snackBar.open('You have been succesfully registered!', '', {
           duration: 2000
         });
