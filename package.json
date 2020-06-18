@@ -23,7 +23,6 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "@hapi/joi": "^17.1.1",
-    "angular2-flash-messages": "^3.0.1",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "rxjs": "~6.5.4",

@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
   exports: [
     MatTabsModule,
@@ -27,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ]
 })
 export class ThirdPartyModule{}

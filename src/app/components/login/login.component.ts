@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   createUser() {
     // validate required fields
     if(!this.validateService.validateRegister(this.registrationUser)) {
-      this.snackBar.open('Please fill in all fields', 'Close', {
+      this.snackBar.open('Please fill in all fields', '', {
         duration: 2000
       });
       return false;
@@ -47,19 +47,29 @@ export class LoginComponent implements OnInit {
 
     // validate email
     if(!this.validateService.validateEmail(this.registrationUser.email)) {
-      this.snackBar.open('Use Valid Email', 'Close', {
+      this.snackBar.open('Use Valid Email', '', {
         duration: 2000
       });
       return false;
     }
 
     this.authService.registerUser(this.registrationUser).subscribe(
-      res => console.log(res)
+      res => {
+        
+        this.snackBar.open('You have been succesfully registered!', '', {
+          duration: 2000
+        });
+        
+      },
+      err => {
+        this.snackBar.open(err.error, "", {
+          duration: 3000
+        })
+      }
     );
   }
 
   loginUser() {
-    // console.log(this.login_user);
     this.authService.loginUser(this.login_user).subscribe(
       res => {
         localStorage.setItem('token', res);

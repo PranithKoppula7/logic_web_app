@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { User } from '../models/user';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class ValidateService {
   constructor() { }
 
   validateRegister(user: User) {
-    if(user.firstName == undefined || user.lastName == undefined || user.email == undefined || user.pid == undefined || user.password == undefined) {
+    if(user.firstName == null || user.lastName == null || user.email == null || user.pid == null || user.password == null) {
       return false;
     } else {
       return true;
