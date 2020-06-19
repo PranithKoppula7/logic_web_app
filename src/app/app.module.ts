@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DisplaycardComponent } from './components/displaycard/displaycard.component';
+import { TodayQuestionComponent } from './components/today-question/today-question.component';
+import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
+import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { DisplaycardComponent } from './components/displaycard/displaycard.compo
     HomeComponent,
     NavbarComponent,
     DisplaycardComponent,
+    TodayQuestionComponent,
+    LoginLayoutComponent,
+    HomeLayoutComponent
   ],
   imports: [
     BrowserModule,
