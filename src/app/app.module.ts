@@ -15,6 +15,8 @@ import { DisplaycardComponent } from './components/displaycard/displaycard.compo
 import { TodayQuestionComponent } from './components/today-question/today-question.component';
 import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
+import { TokenInterceptorService } from './shared/services/token-interceptor.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,8 +35,15 @@ import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
     AppRoutingModule,
     ThirdPartyModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard, 
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

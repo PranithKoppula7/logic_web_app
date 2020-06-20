@@ -6,7 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
@@ -18,8 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   exports: [
     MatTabsModule,
@@ -29,7 +27,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     FormsModule,
     MatSnackBarModule,
-    HttpClientModule,
     MatToolbarModule
   ]
 })
