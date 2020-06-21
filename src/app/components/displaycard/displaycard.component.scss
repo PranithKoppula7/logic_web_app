@@ -6,6 +6,7 @@ mat-card {
     color: white;
     background-color: $background-color;
     text-align: center;
+    outline: none;
     &:hover {
         background-color: darken($background-color, 10%);
     }

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   authToken;
+  // currUser: User;
   private registerUrl = "http://localhost:3000/api/user/register";
   private loginUrl = "http://localhost:3000/api/user/login";
 
@@ -29,8 +30,14 @@ export class AuthService {
     return this.http.post(this.loginUrl, user, 
       { 
         headers: header,
-        responseType: 'text'
-      });
+      }).subscribe(
+        (res: any) => {
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('firstName', res._user.firstName);
+          localStorage.setItem('totalStars', res._user.totalStars);
+          this.router.navigate(['/home']);
+        }
+      );
   }
 
   logOut() {

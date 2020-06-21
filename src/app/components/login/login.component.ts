@@ -70,12 +70,12 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.authService.loginUser(this.login_user)
-    .subscribe(
-      (res) => {
-        localStorage.setItem('token', res.toString());
-        this.router.navigate(['/home']);
-      }
-    )
+    // .subscribe(
+    //   (res: any) => {
+    //     localStorage.setItem('token', res.token);
+    //     this.router.navigate(['/home']);
+    //   }
+    // )
   }
 
 }
