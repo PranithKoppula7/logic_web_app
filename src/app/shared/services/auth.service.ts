@@ -30,14 +30,15 @@ export class AuthService {
     return this.http.post(this.loginUrl, user, 
       { 
         headers: header,
-      }).subscribe(
-        (res: any) => {
-          localStorage.setItem('token', res.token);
-          localStorage.setItem('firstName', res._user.firstName);
-          localStorage.setItem('totalStars', res._user.totalStars);
-          this.router.navigate(['/home']);
-        }
-      );
+      })
+      // .subscribe(
+      //   (res: any) => {
+      //     localStorage.setItem('token', res.token);
+      //     localStorage.setItem('firstName', res._user.firstName);
+      //     localStorage.setItem('totalStars', res._user.totalStars);
+      //     this.router.navigate(['/home']);
+      //   }
+      // );
   }
 
   logOut() {

@@ -5,7 +5,6 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { TodayQuestionComponent } from './components/today-question/today-question.component';
-import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 
 

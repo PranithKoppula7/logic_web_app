@@ -63,19 +63,26 @@ export class LoginComponent implements OnInit {
       err => {
         this.snackBar.open(err.error, "", {
           duration: 3000
-        })
+        });
       }
     );
   }
 
   loginUser() {
     this.authService.loginUser(this.login_user)
-    // .subscribe(
-    //   (res: any) => {
-    //     localStorage.setItem('token', res.token);
-    //     this.router.navigate(['/home']);
-    //   }
-    // )
+    .subscribe(
+      (res: any) => {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('firstName', res._user.firstName);
+        localStorage.setItem('totalStars', res._user.totalStars);
+        this.router.navigate(['/home']);
+      },
+      (err) => {
+        this.snackBar.open(err.error, "", {
+          duration: 3000
+        });
+      }
+    );
   }
 
 }

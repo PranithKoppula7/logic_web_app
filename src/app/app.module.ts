@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { TodayQuestionComponent } from './components/today-question/today-questi
 import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
