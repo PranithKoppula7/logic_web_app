@@ -3,10 +3,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     FormsModule,
     MatSnackBarModule,
     MatToolbarModule,
+    MatRadioModule,
+    MatDialogModule
   ],
   exports: [
     MatTabsModule,
@@ -27,7 +31,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     FormsModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRadioModule,
+    MatDialogModule
   ]
 })
 export class ThirdPartyModule{}

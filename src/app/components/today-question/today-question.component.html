@@ -1,1 +1,21 @@
-<p>today-question works!</p>
+<div class="container">
+    <mat-card mat-ripple class="mat-elevation-z6 question">
+        <mat-card-content>
+            <mat-card-title>{{questions[0].question}}</mat-card-title><br>
+            <mat-radio-group aria-label="Select an option" (change)="onChange($event)" [disabled]="correct">
+                <mat-radio-button [value]="1">{{questions[0].answers.choice_one}}</mat-radio-button><br>
+                <mat-radio-button [value]="2">{{questions[0].answers.choice_two}}</mat-radio-button><br>
+                <mat-radio-button [value]="3">{{questions[0].answers.choice_three}}</mat-radio-button><br>
+                <mat-radio-button [value]="4">{{questions[0].answers.choice_four}}</mat-radio-button>
+            </mat-radio-group>
+        </mat-card-content>
+        <button mat-raised-button color="primary" class="submit" (click)="onSubmit()" [disabled]="correct">Submit</button>
+    </mat-card>
+    <mat-card mat-ripple class="mat-elevation-z6 reasoning" *ngIf="correct && closed">
+        <mat-card-title>Reasoning</mat-card-title><br>
+        <mat-card-content>
+            Correct! Answer choice {{selectedOption}} is correct {{questions[0].reasoning}}
+        </mat-card-content>
+    </mat-card>
+</div>
+

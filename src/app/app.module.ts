@@ -17,6 +17,7 @@ import { TodayQuestionComponent } from './components/today-question/today-questi
 import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
+import { DialogComponent } from './components/today-question/dialog/dialog.component';
 
 
 
@@ -29,7 +30,8 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
     DisplaycardComponent,
     TodayQuestionComponent,
     LoginLayoutComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
