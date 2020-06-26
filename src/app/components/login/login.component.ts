@@ -69,6 +69,14 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+     // validate email
+     if(!this.validateService.validateEmail(this.login_user.email)) {
+      this.snackBar.open('Use Valid Email', '', {
+        duration: 2000
+      });
+      return false;
+    }
+
     this.authService.loginUser(this.login_user)
     .subscribe(
       (res: any) => {
