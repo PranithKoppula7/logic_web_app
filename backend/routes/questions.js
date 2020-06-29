@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Question = require('../models/User');
+const Question = require('../models/Question');
 const mongoose = require('mongoose');
 
 router.get('/today-question', async (req, res) => {
@@ -39,6 +39,7 @@ router.post('/today-question', (req, res) => {
 
     question.save( (error) => {
         if (error) {
+            console.log(error);
             res.status(500).send(error);
         } else {
             res.status(200).send("Added")
