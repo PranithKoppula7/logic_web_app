@@ -13,18 +13,30 @@ import { DialogComponent } from './dialog/dialog.component';
 export class TodayQuestionComponent implements OnInit {
 
   selectedOption: string;
-  questions: Question[];
+  todayQuestion: Question = {
+    question: '',
+    answers: {
+      choice_one: '',
+      choice_two: '',
+      choice_three: '',
+      choice_four: '',
+    },
+    correct_answer: 0,
+    reasoning: ''
+  }
   correct: boolean = false;
   closed: boolean = false;
 
   constructor(private questionService: QuestionService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.questions = this.questionService.getQuestion();
+    this.questionService.getTodayQuestion().subscribe((res: Question) => {
+      this.todayQuestion = res;
+    });
   }
 
   onSubmit() {
-    if(this.selectedOption == this.questions[0].correct_answer.toString()) {
+    if(this.selectedOption == this.todayQuestion.correct_answer.toString()) {
       this.correct = true;
     }
     this.dialog.open(DialogComponent, {
@@ -33,7 +45,7 @@ export class TodayQuestionComponent implements OnInit {
       }
     }).afterClosed().subscribe((res) => {
       this.closed = true;
-    })
+    });
   }
   onChange(event: MatRadioButton) {
     this.selectedOption = event.value;

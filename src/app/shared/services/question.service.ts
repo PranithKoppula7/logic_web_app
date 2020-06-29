@@ -1,28 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Question } from '../models/question';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
 
-  constructor() { }
+  private todayquestionapi = "http://localhost:3000/api/questions/today-question";
 
-  getQuestion() {
-    return QUESTIONS;
+  constructor(private http: HttpClient) { }
+
+  getTodayQuestion() {
+    return this.http.get(this.todayquestionapi);
   }
 }
-
-const QUESTIONS: Question[] = [
-  {
-    question: 'What is 1 + 1?',
-    answers: {
-      choice_one: '3', 
-      choice_two: '4', 
-      choice_three: '2', 
-      choice_four: '5'
-    },
-    correct_answer: 3, 
-    reasoning: 'Because of basic math'
-  }
-]
