@@ -83,7 +83,13 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token);
         localStorage.setItem('firstName', res._user.firstName);
         localStorage.setItem('totalStars', res._user.totalStars);
-        this.router.navigate(['/home']);
+        localStorage.setItem('role', res._user.role);
+        if(res._user.role === 'admin') {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/home']);
+        }
+        
       },
       (err) => {
         this.snackBar.open(err.error, "", {

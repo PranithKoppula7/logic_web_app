@@ -25,13 +25,15 @@ router.post('/register', async (req, res) => {
     email: req.body.email,
     pid: req.body.pid,
     totalStars: req.body.totalStars,
-    password: hashPassword
+    password: hashPassword,
+    role: 'user'
   });
   try {
     const savedUser = await user.save();
     res.send(
       {
-        firstName: user.firstName
+        firstName: user.firstName ,
+        role: user.role
       });
   } catch(err) {
     res.status(400).send(err);
@@ -58,7 +60,8 @@ router.post('/login', async (req, res) => {
     // res.header(token).send(token);
     res.send({
       _user: user,
-      token: token
+      token: token,
+      role: user.role
     });
 
 });

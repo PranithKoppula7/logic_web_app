@@ -18,6 +18,7 @@ import { LoginLayoutComponent } from './shared/layouts/login-layout.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
 import { DialogComponent } from './components/today-question/dialog/dialog.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 
 
@@ -31,7 +32,8 @@ import { DialogComponent } from './components/today-question/dialog/dialog.compo
     TodayQuestionComponent,
     LoginLayoutComponent,
     HomeLayoutComponent,
-    DialogComponent
+    DialogComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

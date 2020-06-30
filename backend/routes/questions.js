@@ -17,4 +17,11 @@ router.get('/today-question', async (req, res) => {
     return res.status(200).json(question);
 });
 
+router.get('/today-question-test', async (req, res) => {
+
+    const questions = await Question.find();
+
+    return res.status(200).json(questions);
+});
+
 module.exports = router;

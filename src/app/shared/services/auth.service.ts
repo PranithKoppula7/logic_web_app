@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  authToken;
+  role: String;
   // currUser: User;
   private registerUrl = "http://localhost:3000/api/user/register";
   private loginUrl = "http://localhost:3000/api/user/login";
@@ -27,6 +27,7 @@ export class AuthService {
   loginUser(user) {
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
+    console.log(this.role);
     return this.http.post(this.loginUrl, user, 
       { 
         headers: header,
@@ -52,6 +53,9 @@ export class AuthService {
 
   getToken() {
     return localStorage.getItem('token');
-    
+  }
+
+  getRole(): string {
+    return localStorage.getItem('role');
   }
 }

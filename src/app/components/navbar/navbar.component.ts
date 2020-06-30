@@ -8,9 +8,12 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
+  isAdmin: boolean;
+
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isAdmin = (this.authService.getRole() == 'admin');
   }
 
   onLogout() {
