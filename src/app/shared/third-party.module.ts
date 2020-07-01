@@ -9,6 +9,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatToolbarModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   exports: [
     MatTabsModule,
@@ -33,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatToolbarModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ]
 })
 export class ThirdPartyModule{}

@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { TodayQuestionComponent } from './components/today-question/today-question.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 
 
 const routes: Routes = [

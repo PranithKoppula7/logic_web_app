@@ -3,11 +3,13 @@
         <a routerLink="/home">Logic Problems</a>
     </span>
 
-    <div class="spacer"></div> 
+    <div class="spacer"></div>
 
     <a mat-button *ngIf="!isAdmin"><span class="material-icons icons" routerLink="/home">home</span></a>
-    <a mat-button ><span class="material-icons icons">settings</span></a>
-    <a mat-button ><span class="material-icons icons">account_circle</span></a>
-    <li><a mat-button (click)="onLogout()">Logout</a></li>
-
+    <a mat-button><span class="material-icons icons">settings</span></a>
+    <button mat-button [matMenuTriggerFor]="menu"><span class="material-icons icons">account_circle</span></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+    
 </mat-toolbar>
