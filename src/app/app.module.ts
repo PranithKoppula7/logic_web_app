@@ -21,7 +21,6 @@ import { DialogComponent } from './components/today-question/dialog/dialog.compo
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +39,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
     AppRoutingModule,
     ThirdPartyModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [ValidateService, AuthService, AuthGuard, 
   {
