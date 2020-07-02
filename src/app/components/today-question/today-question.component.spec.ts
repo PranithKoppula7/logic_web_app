@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
 import { TodayQuestionComponent } from './today-question.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { MatDialog } from '@angular/material/dialog';
 
 describe('TodayQuestionComponent', () => {
   let component: TodayQuestionComponent;
@@ -11,8 +11,8 @@ describe('TodayQuestionComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TodayQuestionComponent ],
-      imports: [HttpClientTestingModule],
-      providers: [ MatDialog]
+      imports: [HttpClientTestingModule, MatDialogModule],
+      providers: [ { provide: MatDialogRef, useValue: {}}]
     })
     .compileComponents();
   }));
