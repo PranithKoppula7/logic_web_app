@@ -7,6 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { TodayQuestionComponent } from './components/today-question/today-question.component';
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: '',
         component: AdminDashboardComponent
+      },
+      {
+        path: 'create-question',
+        component: CreateQuestionComponent
       }
     ]
   }

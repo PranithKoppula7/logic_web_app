@@ -19,6 +19,7 @@ import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
 import { DialogComponent } from './components/today-question/dialog/dialog.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
     HomeLayoutComponent,
     DialogComponent,
     AdminDashboardComponent,
+    CreateQuestionComponent,
   ],
   imports: [
     BrowserModule,

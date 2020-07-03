@@ -11,6 +11,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 
+
 @NgModule({
   imports: [
     MatTabsModule,
@@ -23,7 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatRadioModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   exports: [
     MatTabsModule,
@@ -36,7 +37,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatRadioModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
   ]
 })
 export class ThirdPartyModule{}

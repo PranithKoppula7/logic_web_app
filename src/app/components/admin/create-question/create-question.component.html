@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-card class="mat-elevation-z6">
+        <mat-card-content class="wrapper">
+            <mat-card-title>Create A Question</mat-card-title> <br><br>
+            <form class="question-form" fxLayoutAlign="stretch" fxLayout="column">
+                <mat-card-title class="label">Question</mat-card-title>
+                <mat-form-field class="question">
+                    <mat-label>Question</mat-label>
+                    <input matInput name="question" placeholder="Enter a question...">
+                </mat-form-field><br>
+                <mat-card-title class="label">Answers</mat-card-title>
+                <mat-form-field class="answers">
+                    <mat-label>Choice 1</mat-label>
+                    <input matInput name="answer_choice_1" placeholder="Enter a Choice">
+                </mat-form-field>
+                <mat-form-field class="answers">
+                    <mat-label>Choice 2</mat-label>
+                    <input matInput name="answer_choice_2" placeholder="Enter a Choice">
+                </mat-form-field>
+                <mat-form-field class="answers">
+                    <mat-label>Choice 3</mat-label>
+                    <input matInput name="answer_choice_3" placeholder="Enter a Choice">
+                </mat-form-field>
+                <mat-form-field class="answers">
+                    <mat-label>Choice 4</mat-label>
+                    <input matInput name="answer_choice_4" placeholder="Enter a Choice">
+                </mat-form-field> <br>
+                <mat-card-title class="label">Reasoning</mat-card-title>
+                <mat-form-field class="answers">
+                        <mat-label>Reasoning</mat-label>
+                        <input matInput name="answer_choice_4" placeholder="Enter a reason">
+                    </mat-form-field>
+                <button mat-raised-button type="submit" color="primary">Create</button>
+            </form>
+        </mat-card-content>
+
+    </mat-card>
+</div>
