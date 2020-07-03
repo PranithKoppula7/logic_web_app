@@ -32,7 +32,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
     LoginLayoutComponent,
     HomeLayoutComponent,
     DialogComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
