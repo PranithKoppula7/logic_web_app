@@ -52,6 +52,17 @@ export class CreateQuestionComponent implements OnInit {
       this.questionService.createQuestion(this.question).subscribe((res: any) => {
         this.loading = false;
         this.snackbar.open(res.message, "", {
+          duration: 5000
+        });
+        this.question.question = "",
+        this.question.answers.choice_one = "",
+        this.question.answers.choice_two = "",
+        this.question.answers.choice_three = "",
+        this.question.answers.choice_four = "",
+        this.question.correct_answer = 0,
+        this.question.reasoning = ""
+      }, (err) => {
+        this.snackbar.open(err.message, "", {
           duration: 3000
         });
       });

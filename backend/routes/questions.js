@@ -38,7 +38,7 @@ router.post('/create-question', async(req, res) => {
             res.status(400).send(err);
         }
 });
-router.get('/today-question-test', async (req, res) => {
+router.get('/', async (req, res) => {
 
     const questions = await Question.find();
 
