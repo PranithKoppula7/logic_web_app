@@ -1,0 +1,21 @@
+@import '../../../../styles.scss';
+
+.container {
+    margin: 5%;
+}
+.intro {
+    margin-bottom: 2%;
+
+    p {
+        padding-left: 1%;
+    }
+}
+.actions {
+    a {
+        background-color: $background-color;
+        margin-right: 1rem;
+        padding: 3%;
+        font-size: 1.2rem;
+        color: white;
+    }
+}

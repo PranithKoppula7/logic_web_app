@@ -1,6 +1,17 @@
+@import '../../../styles.scss';
+
+* {
+  background: white;
+}
+
+.title {
+  color: $background_color;
+}
+
 .container{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $background_color;
 }
