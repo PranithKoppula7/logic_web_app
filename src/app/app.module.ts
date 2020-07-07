@@ -20,6 +20,7 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
 import { DialogComponent } from './components/today-question/dialog/dialog.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
+import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CreateQuestionComponent } from './components/admin/create-question/crea
     DialogComponent,
     AdminDashboardComponent,
     CreateQuestionComponent,
+    AllQuestionsComponent,
   ],
   imports: [
     BrowserModule,

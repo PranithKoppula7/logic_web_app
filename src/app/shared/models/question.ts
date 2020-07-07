@@ -8,4 +8,5 @@ export class Question {
     };
     correct_answer: number;
     reasoning: string;
+    visited: boolean;
 }

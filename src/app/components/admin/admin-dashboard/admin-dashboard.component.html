@@ -2,17 +2,15 @@
 <div class="container">
 
     <div class="intro">
-        <mat-toolbar>Dashboard</mat-toolbar>
-        <p>Hello {{adminName}}! Welcome to the admin dashboard</p>
+        <!-- <mat-toolbar>Dashboard</mat-toolbar> -->
+        <h2 class="welcome-message">Welcome to the Dashboard, {{adminName}}!</h2>
     </div>
 
-    <div class="actions">
-        <a mat-raised-button routerLink="create-question"><span class="material-icons">
-            add
-            </span>Create a question</a>
+    <div class="actions" fxLayoutGap="20px">
+        <a mat-raised-button routerLink="create-question"><span class="material-icons">add</span>Create a question</a>
         <a mat-raised-button>See previous questions</a>
         <a mat-raised-button>Get all users</a>
-        <a mat-raised-button>Create a question</a>
+        <a mat-raised-button routerLink="get-all-questions">Get all questions</a>
     </div>
     
 </div>

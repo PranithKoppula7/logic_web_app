@@ -24,6 +24,9 @@ const questionSchema = new mongoose.Schema(
         },
         reasoning: {
             type: String
+        },
+        visited: {
+            type: Boolean
         }
     },
     {

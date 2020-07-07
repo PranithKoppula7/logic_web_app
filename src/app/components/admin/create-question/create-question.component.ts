@@ -22,7 +22,8 @@ export class CreateQuestionComponent implements OnInit {
       choice_four: ''
     },
     correct_answer: 0,
-    reasoning: ''
+    reasoning: '',
+    visited: false
   }
 
   constructor(private snackbar: MatSnackBar, private questionService: QuestionService) {

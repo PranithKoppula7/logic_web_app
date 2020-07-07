@@ -5,10 +5,13 @@ mat-card {
     padding: 5%;
     color: white;
     background-color: $background-color;
+    transition: background 0.1s linear;
+    letter-spacing: 0.05rem;
     text-align: center;
     outline: none;
     &:hover {
         background-color: darken($background-color, 10%);
+        cursor: pointer;
     }
 
     .previous {

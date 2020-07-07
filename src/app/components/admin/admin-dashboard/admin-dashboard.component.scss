@@ -5,7 +5,9 @@
 }
 .intro {
     margin-bottom: 2%;
-
+    .welcome-message {
+        font-weight: 500;
+    }
     p {
         padding-left: 1%;
     }
@@ -13,9 +15,13 @@
 .actions {
     a {
         background-color: $background-color;
-        margin-right: 1rem;
-        padding: 3%;
-        font-size: 1.2rem;
         color: white;
+        text-transform: uppercase;
+        transition: background 0.1s linear;
+        letter-spacing: 0.05rem;
+        padding: .4rem 1rem;
+        &:hover {
+            background: darken($background-color, 6%);
+        }
     }
 }

@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  adminName: String;
+  adminName: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.adminName = localStorage.getItem('firstName');
+    this.adminName = this.adminName.charAt(0).toUpperCase() + this.adminName.substring(1, this.adminName.length);
   }
 
 }

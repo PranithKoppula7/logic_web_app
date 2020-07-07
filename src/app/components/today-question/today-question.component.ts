@@ -22,7 +22,8 @@ export class TodayQuestionComponent implements OnInit {
       choice_four: '',
     },
     correct_answer: 0,
-    reasoning: ''
+    reasoning: '',
+    visited: false
   }
   correct: boolean = false;
   closed: boolean = false;

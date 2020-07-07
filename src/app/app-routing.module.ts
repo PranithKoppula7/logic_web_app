@@ -8,6 +8,7 @@ import { TodayQuestionComponent } from './components/today-question/today-questi
 import { HomeLayoutComponent } from './shared/layouts/home-layout.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
+import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'create-question',
         component: CreateQuestionComponent
+      },
+      {
+        path: 'get-all-questions',
+        component: AllQuestionsComponent
       }
     ]
   }
