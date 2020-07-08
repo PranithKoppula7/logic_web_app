@@ -21,6 +21,7 @@ import { DialogComponent } from './components/today-question/dialog/dialog.compo
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
+import { AllUsersComponent } from './components/admin/all-users/all-users.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AllQuestionsComponent } from './components/admin/all-questions/all-ques
     AdminDashboardComponent,
     CreateQuestionComponent,
     AllQuestionsComponent,
+    AllUsersComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,6 +42,10 @@ export class AuthService {
       // );
   }
 
+  getUsers() {
+    return this.http.get('http://localhost:3000/api/user/get-users');
+  }
+
   logOut() {
     localStorage.clear();
     this.router.navigate(['']);

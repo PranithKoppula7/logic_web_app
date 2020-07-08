@@ -13,6 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule
   ],
   exports: [
     MatTabsModule,
@@ -48,7 +50,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule
   ]
 })
 export class ThirdPartyModule{}

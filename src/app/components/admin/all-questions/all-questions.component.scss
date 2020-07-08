@@ -1,7 +1,14 @@
-// table {
-//     width: 100%;
-//   }
+table {
+    width: 100%;
+}
 
 .container {
     margin: 5%;
+
+    .question {
+        padding: 1%;
+        &:hover {
+            background-color: rgb(231, 230, 230);
+        }
+    }
 }

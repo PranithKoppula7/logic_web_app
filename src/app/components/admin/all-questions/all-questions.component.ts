@@ -10,7 +10,7 @@ import { QuestionService } from 'src/app/shared/services/question.service';
 export class AllQuestionsComponent implements OnInit {
 
   questions: Question[];
-  displayedColumns: string[] = ['question', 'visited', 'delete'];
+  displayedColumns: string[] = ['question', 'actions'];
 
   constructor(private questionService: QuestionService) { 
     this.questionService.getAllQuestions().subscribe((res: Question[]) => {

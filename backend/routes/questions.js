@@ -48,7 +48,8 @@ router.post('/create-question', async(req, res) => {
             choice_four: req.body.answers.choice_four
         },
         correct_answer: req.body.correct_answer,
-        reasoning: req.body.reasoning
+        reasoning: req.body.reasoning,
+        visited: req.body.visited
         });
         try {
             const savedQuestion = await question.save();
