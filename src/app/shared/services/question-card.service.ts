@@ -9,7 +9,7 @@ export class QuestionCardService {
   title: string;
   question: Question;
 
-  constructor() { }
+  constructor() {}
 
   createQuestionCard(title: string, question?: Question) {
     this.title = title;
