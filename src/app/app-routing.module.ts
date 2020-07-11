@@ -10,6 +10,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { CreateQuestionComponent } from './components/admin/create-question/create-question.component';
 import { AllQuestionsComponent } from './components/admin/all-questions/all-questions.component';
 import { AllUsersComponent } from './components/admin/all-users/all-users.component';
+import { EditQuestionComponent } from './components/admin/edit-question/edit-question.component';
 
 
 const routes: Routes = [
@@ -47,7 +48,16 @@ const routes: Routes = [
       },
       {
         path: 'get-all-questions',
-        component: AllQuestionsComponent
+        children: [
+          {
+            path: '',
+            component: AllQuestionsComponent
+          },
+          {
+            path: 'edit-question' ,
+            component: EditQuestionComponent
+          } 
+        ]
       }, 
       {
         path: 'get-all-users',
