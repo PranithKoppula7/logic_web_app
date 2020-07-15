@@ -3,19 +3,6 @@ const Question = require('../models/Question');
 let questions;
 
 router.get('/today-question', async (req, res) => {
-    // const question = new Question({
-    //     question: 'What is 1 + 1?',
-    //     answers: {
-    //         choice_one: '4',
-    //         choice_two: '10', 
-    //         choice_three: '2', 
-    //         choice_four: '3'
-    //     },
-    //     correct_answer: 3,
-    //     reasoning: 'Because of basic math!'
-    // });
-
-    // return res.status(200).json(question);
     questions = await Question.find();
     let todayQuestion;
     var i;
@@ -66,17 +53,41 @@ router.get('/', async (req, res) => {
     return res.status(200).json(questions);
 });
 
-async function setTodayQuestion() {
-    questions = await Question.find();
-    var i;
-    for(i = 0; i < questions.length; i++) {
-        if(questions[i].visited) {
-            continue;
+router.get('/:id', async (req,res) => {
+    try {
+        const _id = req.params.id;
+
+        const question = await Question.findOne({_id});
+        if(!question) {
+            return res.status(404).json({});
         } else {
-            todayQuestion = questions[i];
-            questions[i].visited = true;
-            break;
+            return res.status(200).json(question);
         }
+    } catch (error) {
+        return res.status(500).json({"error": error});
     }
-}
+});
+
+router.put('/:id', async (req,res) => {
+    try {
+        const _id = req.params.id;
+        let question = await Question.findOne({_id});
+
+        question.question = req.body.question;
+        question.answers.choice_one = req.body.answers.choice_one;
+        question.answers.choice_two = req.body.answers.choice_two;
+        question.answers.choice_three = req.body.answers.choice_three;
+        question.answers.choice_four = req.body.answers.choice_four;
+        question.reasoning = req.body.reasoning;
+        question.correct_answer = req.body.correct_answer;
+        question.visited = req.body.visited;
+
+        await question.save();
+        return res.status(200).send(question);
+        
+    } catch(error) {
+        return res.status(500).json({"error": error})
+    }
+    
+});
 module.exports = router;

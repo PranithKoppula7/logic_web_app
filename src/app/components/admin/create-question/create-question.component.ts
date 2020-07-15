@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Question } from 'src/app/shared/models/question';
@@ -12,8 +12,10 @@ import { QuestionService } from 'src/app/shared/services/question.service';
 })
 export class CreateQuestionComponent implements OnInit {
 
-  loading: boolean = false;
-  question: Question = {
+  @Input() title: string = "Create A Question";
+  @Input() button_name: string = "Create";
+  @Input() _id: string;
+  @Input() question: Question = {
     question: '',
     answers: {
       choice_one: '',
@@ -26,15 +28,12 @@ export class CreateQuestionComponent implements OnInit {
     visited: false
   }
 
-  constructor(private snackbar: MatSnackBar, private questionService: QuestionService) {
-    
-  }
+  constructor(private snackbar: MatSnackBar,  private questionService: QuestionService) {}
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.loading = true;
     if(this.question.question === "" 
       || this.question.answers.choice_one === ""
       || this.question.answers.choice_two === ""
@@ -46,12 +45,17 @@ export class CreateQuestionComponent implements OnInit {
           this.snackbar.open("Values are missing! Please fill in the fields", "", {
             duration: 3000
           });
-          this.loading = false;
         }, 3000)
         
-    } else {
+    } else if(this.title === "Edit Question")  {
+      this.questionService.updateOneQuestion(this._id, this.question).subscribe((res: any) => {
+        this.snackbar.open("Sucesfully Saved!", "Close", {
+          duration: 3000
+        })
+      })
+    }
+    else {
       this.questionService.createQuestion(this.question).subscribe((res: any) => {
-        this.loading = false;
         this.snackbar.open(res.message, "", {
           duration: 5000
         });

@@ -54,7 +54,7 @@ const routes: Routes = [
             component: AllQuestionsComponent
           },
           {
-            path: 'edit-question' ,
+            path: 'edit-question/:id' ,
             component: EditQuestionComponent
           } 
         ]

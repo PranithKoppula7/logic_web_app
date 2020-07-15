@@ -1,8 +1,7 @@
 <div class="container">
     <mat-card class="mat-elevation-z6">
-        <mat-spinner *ngIf="loading" class=""></mat-spinner>
         <mat-card-content class="wrapper">
-            <mat-card-title>Create A Question</mat-card-title> <br><br>
+            <mat-card-title>{{title}}</mat-card-title> <br><br>
             <form class="question-form" fxLayoutAlign="stretch" fxLayout="column" (submit)="onSubmit()">
                 <mat-card-title class="label">Question</mat-card-title>
                 <mat-form-field class="question" required>
@@ -36,10 +35,9 @@
                     <input matInput name="answer_choice_4" placeholder="Enter a reason" [(ngModel)]="question.reasoning" required>
                 </mat-form-field> <br>
                 
-                <button mat-raised-button type="submit" color="primary">Create</button>
+                <button mat-raised-button type="submit" color="primary">{{button_name}}</button>
             </form>
         </mat-card-content>
     </mat-card>
    
-
 </div>

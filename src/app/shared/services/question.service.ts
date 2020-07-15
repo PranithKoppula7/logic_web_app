@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { Question } from '../models/question';
 
 @Injectable({
@@ -22,4 +23,13 @@ export class QuestionService {
   getAllQuestions() {
     return this.http.get(this.root);
   }
+
+  getOneQuestion(_id) {
+    return this.http.get(this.root + `/${_id}`);
+  }
+
+  updateOneQuestion(_id, question: Question) {
+    return this.http.put(this.root + `/${_id}`, question);
+  }
+
 }
