@@ -5,16 +5,19 @@
     <mat-tab label="Login">
       <ng-template matTabContent>
         <mat-card>
-          <form class="login-form" fxLayoutAlign="stretch" fxLayout="column" (submit)="loginUser()">
+          <form class="login-form" fxLayoutAlign="stretch" fxLayout="column">
             <mat-form-field class="email">
               <mat-label>Email</mat-label>
               <input matInput type="email" [(ngModel)]="login_user.email" name="email" required>
             </mat-form-field>
             <mat-form-field class="password">
               <mat-label>Password</mat-label>
-              <input matInput type="password" [(ngModel)]="login_user.password" name="password" required>
+              <input matInput [(ngModel)]="login_user.password" name="password" required [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
             </mat-form-field>
-            <button mat-raised-button type="submit" color="primary" >Login</button>
+            <button mat-raised-button type="submit" color="primary" (click)="loginUser()">Login</button>
           </form >
         </mat-card>
       </ng-template>
@@ -22,7 +25,7 @@
     <mat-tab label="Sign-up">
         <ng-template matTabContent>
             <mat-card>
-              <form class="login-form" fxLayoutAlign="stretch" fxLayout="column" (submit)="createUser()">
+              <form class="login-form" fxLayoutAlign="stretch" fxLayout="column">
                 <mat-form-field class="first-name" >
                   <mat-label>First Name</mat-label>
                   <input matInput [(ngModel)]='registrationUser.firstName' name="firstName" required>
@@ -45,10 +48,13 @@
 
                 <mat-form-field class="password">
                   <mat-label>Password</mat-label>
-                  <input matInput type="password" [(ngModel)]='registrationUser.password' name="password" required>
+                  <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]='registrationUser.password' name="password" required>
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
                 </mat-form-field>
 
-                  <button mat-raised-button type="submit" color="primary">Sign Up!</button>
+                <button mat-raised-button type="submit" color="primary" (click)="createUser()">Sign Up!</button>
               </form >
             </mat-card>
           </ng-template>

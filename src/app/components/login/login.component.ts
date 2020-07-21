@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     password: ""
   }
 
+  hide = true;
+
   constructor(
     private snackBar: MatSnackBar, 
     private validateService: ValidateService,

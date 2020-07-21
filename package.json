@@ -25,6 +25,7 @@
     "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
+    "ng-katex": "^2.0.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

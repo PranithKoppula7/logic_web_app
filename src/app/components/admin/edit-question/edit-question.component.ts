@@ -23,7 +23,7 @@ export class EditQuestionComponent implements OnInit {
     visited: false
   }
   _id: string;
-
+  
   constructor(private questionService: QuestionService, private route: ActivatedRoute) {
     
   }
@@ -32,8 +32,9 @@ export class EditQuestionComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this._id = params.id;
     });
-    
+
     this.questionService.getOneQuestion(this._id).subscribe((question: Question) => {
+      console.log(question);
       this.question = question;
     });
   }

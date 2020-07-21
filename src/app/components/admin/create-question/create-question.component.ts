@@ -16,15 +16,15 @@ export class CreateQuestionComponent implements OnInit {
   @Input() button_name: string = "Create";
   @Input() _id: string;
   @Input() question: Question = {
-    question: '',
+    question: ``,
     answers: {
-      choice_one: '',
-      choice_two: '',
-      choice_three: '',
-      choice_four: ''
+      choice_one: ``,
+      choice_two: ``,
+      choice_three: ``,
+      choice_four: ``
     },
     correct_answer: 0,
-    reasoning: '',
+    reasoning: ``,
     visited: false
   }
 

@@ -2,42 +2,52 @@
     <mat-card class="mat-elevation-z6">
         <mat-card-content class="wrapper">
             <mat-card-title>{{title}}</mat-card-title> <br><br>
-            <form class="question-form" fxLayoutAlign="stretch" fxLayout="column" (submit)="onSubmit()">
+            <div class="form-wrapper" fxLayoutAlign="stretch" fxLayout="column">
                 <mat-card-title class="label">Question</mat-card-title>
                 <mat-form-field class="question" required>
-                    <input matInput name="question" placeholder="Enter a question..." [(ngModel)]="question.question" name="question" required>
+                    <input matInput name="question" placeholder="Enter a question..." [(ngModel)]="question.question"
+                        name="question" required>
+                        <ng-katex-paragraph [paragraph]="question.question"></ng-katex-paragraph>
                 </mat-form-field><br>
                 <mat-card-title class="label">Answers</mat-card-title>
                 <mat-form-field class="answers">
-                    <input matInput name="answer_choice_1" placeholder="Choice 1" [(ngModel)]="question.answers.choice_one" required>
+                    <input matInput name="answer_choice_1" placeholder="Choice 1"
+                        [(ngModel)]="question.answers.choice_one" required>
+                        <ng-katex-paragraph [paragraph]="question.answers.choice_one"></ng-katex-paragraph>
                 </mat-form-field>
                 <mat-form-field class="answers">
-                    <input matInput name="answer_choice_2" placeholder="Choice 2" [(ngModel)]="question.answers.choice_two" required>
+                    <input matInput name="answer_choice_2" placeholder="Choice 2"
+                        [(ngModel)]="question.answers.choice_two" required>
+                        <ng-katex-paragraph [paragraph]="question.answers.choice_two"></ng-katex-paragraph>
                 </mat-form-field>
                 <mat-form-field class="answers">
-                    <input matInput name="answer_choice_3" placeholder="Choice 3" [(ngModel)]="question.answers.choice_three" required>
+                    <input matInput name="answer_choice_3" placeholder="Choice 3"
+                        [(ngModel)]="question.answers.choice_three" required>
+                        <ng-katex-paragraph [paragraph]="question.answers.choice_three"></ng-katex-paragraph>
                 </mat-form-field>
                 <mat-form-field class="answers">
-                    <input matInput name="answer_choice_4" placeholder="Choice 4" [(ngModel)]="question.answers.choice_four" required>
+                    <input matInput name="answer_choice_4" placeholder="Choice 4"
+                        [(ngModel)]="question.answers.choice_four" required>
+                        <ng-katex-paragraph [paragraph]="question.answers.choice_four"></ng-katex-paragraph>
                 </mat-form-field> <br>
                 <mat-card-title class="label">Correct Answer</mat-card-title>
-                <mat-form-field >
+                <mat-form-field>
                     <mat-label>Choose an answer</mat-label>
                     <mat-select [(ngModel)]="question.correct_answer" name="correct" required>
-                      <mat-option [value]="1">1</mat-option>
-                      <mat-option [value]="2">2</mat-option>
-                      <mat-option [value]="3">3</mat-option>
-                      <mat-option [value]="4">4</mat-option>
+                        <mat-option [value]="1">1</mat-option>
+                        <mat-option [value]="2">2</mat-option>
+                        <mat-option [value]="3">3</mat-option>
+                        <mat-option [value]="4">4</mat-option>
                     </mat-select>
-                  </mat-form-field>
+                </mat-form-field>
                 <mat-card-title class="label">Reasoning</mat-card-title>
                 <mat-form-field class="reasoning">
-                    <input matInput name="answer_choice_4" placeholder="Enter a reason" [(ngModel)]="question.reasoning" required>
+                    <input matInput name="answer_choice_4" placeholder="Enter a reason" [(ngModel)]="question.reasoning"
+                        required>
                 </mat-form-field> <br>
-                
-                <button mat-raised-button type="submit" color="primary">{{button_name}}</button>
-            </form>
+
+                <button mat-raised-button type="submit" color="primary" (click)="onSubmit()">{{button_name}}</button>
+            </div>
         </mat-card-content>
     </mat-card>
-   
 </div>

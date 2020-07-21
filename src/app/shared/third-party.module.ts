@@ -14,6 +14,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
+import { KatexModule } from 'ng-katex';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import {MatDividerModule} from '@angular/material/divider';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    KatexModule,
+    MatIconModule
   ],
   exports: [
     MatTabsModule,
@@ -51,7 +55,9 @@ import {MatDividerModule} from '@angular/material/divider';
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    KatexModule,
+    MatIconModule
   ]
 })
 export class ThirdPartyModule{}

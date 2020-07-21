@@ -1,12 +1,12 @@
 <div class="container">
     <mat-card mat-ripple class="mat-elevation-z6 question">
         <mat-card-content>
-            <mat-card-title>{{todayQuestion.question}}</mat-card-title><br>
+            <mat-card-title> <ng-katex-paragraph [paragraph]="todayQuestion.question"></ng-katex-paragraph></mat-card-title>
             <mat-radio-group aria-label="Select an option" (change)="onChange($event)" [disabled]="correct">
-                <mat-radio-button [value]="1">{{todayQuestion.answers.choice_one}}</mat-radio-button><br>
-                <mat-radio-button [value]="2">{{todayQuestion.answers.choice_two}}</mat-radio-button><br>
-                <mat-radio-button [value]="3">{{todayQuestion.answers.choice_three}}</mat-radio-button><br>
-                <mat-radio-button [value]="4">{{todayQuestion.answers.choice_four}}</mat-radio-button>
+                <mat-radio-button [value]="1"> <ng-katex-paragraph [paragraph]="todayQuestion.answers.choice_one"></ng-katex-paragraph></mat-radio-button>
+                <mat-radio-button [value]="2"><ng-katex-paragraph [paragraph]="todayQuestion.answers.choice_two"></ng-katex-paragraph></mat-radio-button>
+                <mat-radio-button [value]="3"><ng-katex-paragraph [paragraph]="todayQuestion.answers.choice_three"></ng-katex-paragraph></mat-radio-button>
+                <mat-radio-button [value]="4"><ng-katex-paragraph [paragraph]="todayQuestion.answers.choice_four"></ng-katex-paragraph></mat-radio-button>
             </mat-radio-group>
         </mat-card-content>
         <button mat-raised-button color="primary" class="submit" (click)="onSubmit()" [disabled]="correct">Submit</button>
